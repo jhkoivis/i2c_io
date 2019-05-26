@@ -28,9 +28,13 @@ start = time.time()
 for i in range(10):
     time.sleep(0.01)
     #bus.write_i2c_block_data(0x5a, 0x75, [4])
-    print bus.read_i2c_block_data(0x5a, 0x75)
-    time.sleep(0.01)
+    #print bus.read_i2c_block_data(0x5a, 0x75)
+    #time.sleep(0.01)
     #bus.write_i2c_block_data(0x5a, 0x75, [0])
-    print bus.read_i2c_block_data(0x5a, 0x75)
+    #print bus.read_i2c_block_data(0x5a, 0x75)
+    data = bus.read_i2c_block_data(0x5a, 0x75)
+    #print "%s" % (bin(data[11]).zfill(8))
+    #print data[11] % 64, data[11] % 128
+    print '{0:07b}'.format(data[11])
 
 print time.time()-start
