@@ -25,8 +25,8 @@ bus.write_i2c_block_data(0x5a, 0x73, [0xff]) # ctl0 to 1
 bus.write_i2c_block_data(0x5a, 0x74, [0xff]) # ctl1 to 1
 
 start = time.time()
-for i in range(10):
-    time.sleep(0.01)
+for i in range(1000):
+    time.sleep(0.1)
     #bus.write_i2c_block_data(0x5a, 0x75, [4])
     #print bus.read_i2c_block_data(0x5a, 0x75)
     #time.sleep(0.01)
